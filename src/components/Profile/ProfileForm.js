@@ -11,7 +11,7 @@ const ProfileForm = () => {
 
   useEffect(() => {
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDZkztg3rItEhilSNN_uSr_AlJP2-i27n8",
+      "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyDLDHqDhhBjTgnQiQmoGodN60pYzDDAvus",
       {
         method: "POST",
         headers: {
@@ -46,7 +46,7 @@ const ProfileForm = () => {
     const enteredPhotoURL = profileUrlInputRef.current.value;
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDZkztg3rItEhilSNN_uSr_AlJP2-i27n8",
+      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDLDHqDhhBjTgnQiQmoGodN60pYzDDAvus",
       {
         method: "POST",
         headers: {
@@ -89,10 +89,10 @@ const ProfileForm = () => {
           <input type="text" id="full-name" ref={fullNameInputRef} required />
         </div>
         <div className={classes.control}>
-          <label htmlFor="photot-url">Profile Photot URL</label>
+          <label htmlFor="photo-url">Profile Photot URL</label>
           <input
             type="text"
-            id="photot-url"
+            id="photo-url"
             ref={profileUrlInputRef}
             required
           />

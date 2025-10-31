@@ -12,7 +12,7 @@ const ForgetPassword = () => {
     const enteredEmail = emailInputRef.current.value;
     try {
       fetch(
-        "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDZkztg3rItEhilSNN_uSr_AlJP2-i27n8",
+        "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDLDHqDhhBjTgnQiQmoGodN60pYzDDAvus",
         {
           method: "POST",
           headers: {

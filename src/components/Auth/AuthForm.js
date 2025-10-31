@@ -10,8 +10,11 @@ const AuthForm = () => {
   const confirmPasswordInputRef = useRef();
 
   const authCtx = useContext(AuthContext);
-  const navigate = useNavigate();
-
+  /**
+   * 
+   * const navigate = useNavigate();
+   * 
+   * */
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
@@ -49,10 +52,10 @@ const AuthForm = () => {
     let URL;
     if (isLogin) {
       URL =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDZkztg3rItEhilSNN_uSr_AlJP2-i27n8";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDLDHqDhhBjTgnQiQmoGodN60pYzDDAvus";
     } else if (isFormValid) {
       URL =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDZkztg3rItEhilSNN_uSr_AlJP2-i27n8";
+        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDLDHqDhhBjTgnQiQmoGodN60pYzDDAvus";
     }
     fetch(URL, {
       method: "POST",
@@ -65,16 +68,15 @@ const AuthForm = () => {
         "Content-Type": "application/json",
       },
     })
-      .then((res) => {
+      .then(async (res) => {
         setIsLoading(false);
         if (res.ok) {
           console.log("user created");
           return res.json();
         } else {
-          return res.json().then((data) => {
-            let errorMessage = "Authentication failed!";
-            throw new Error(errorMessage);
-          });
+          /**const data = await res.json();*/
+          let errorMessage = "Authentication failed!";
+          throw new Error(errorMessage);
         }
       })
       .then((data) => {
